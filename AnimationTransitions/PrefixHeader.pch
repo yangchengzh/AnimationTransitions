@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  AnimationTransitions
+//
+//  Created by 蓝云 on 2017/5/18.
+//  Copyright © 2017年 yangzhi. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/*
+ * 定义视图和屏幕的大小
+ */
+#define SCREEN_FRAME ([[UIScreen mainScreen] bounds])
+#define SCREEN_HEIGHT (SCREEN_FRAME.size.height)
+#define SCREEN_WIDTH (SCREEN_FRAME.size.width)
+
+
+#define RGB(_red, _green, _blue, _alpha) [UIColor colorWithRed:_red/255.f green:_green/255.f blue:_blue/255.f alpha:_alpha]
+
+#endif /* PrefixHeader_pch */
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import "Masonry.h"
+
+
+#endif

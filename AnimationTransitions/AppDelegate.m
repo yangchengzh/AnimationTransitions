@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "YNavigationViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor blackColor];
+    
+    ViewController *viewC = [[ViewController alloc] init];
+    YNavigationViewController *naVC = [[YNavigationViewController alloc] initWithRootViewController:viewC];
+    self.window.rootViewController = naVC;
+    
+    [self.window makeKeyAndVisible];
+    
+    self.backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 667)];
+    [self.window insertSubview:self.backView atIndex:0];
+    self.backView.backgroundColor = [UIColor redColor];
+    self.backView.hidden = YES;
+    
+    
     return YES;
 }
 
